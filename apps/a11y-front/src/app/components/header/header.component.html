@@ -1,43 +1,29 @@
 <div class="header">
   <div class="header__logo"> a11y Project</div>
   <div class="header__menu">
-    <span class="header__menu-item">
-      <a class="header__menu-link" routerLink="/">
-        Home
-      </a>
+    <a class="header__menu-link" routerLink="/">
+      Home
+    </a>
+    <span class="header__menu-link" (click)="goToContact()">
+      Contact
     </span>
-    <span class="header__menu-item">
-      <a class="header__menu-link" (click)="goToContact()">
-        Contact
-      </a>
+    <span class="header__menu-link" (click)="goToNews()">
+      News
     </span>
-    <span class="header__menu-item">
-      <a class="header__menu-link" (click)="goToNews()">
-        News
-      </a>
-    </span>
-    <span class="header__menu-item">
-      <a class="header__menu-link" routerLink="/lists">
-        Lists
-      </a>
-    </span>
+    <a class="header__menu-link" routerLink="/lists">
+      Lists
+    </a>
     @if (!authService.isLoggedIn()) {
-      <span class="header__menu-item">
-        <a class="header__menu-link" (click)="goToLogin()">
-          Login
-        </a>
-      </span>
-      <span class="header__menu-item">
-        <a class="header__menu-link" (click)="goToRegister()">
-          Register
-        </a>
-      </span>
+      <span class="header__menu-link" (click)="goToLogin()">
+      Login
+    </span>
+      <span class="header__menu-link" (click)="goToRegister()">
+      Register
+    </span>
     } @else {
-      <span class="header__menu-item">
-        <a class="header__menu-link" (click)="logout()">
-          Logout
-        </a>
-      </span>
+      <span class="header__menu-link" (click)="logout()">
+      Logout
+    </span>
     }
 
   </div>
