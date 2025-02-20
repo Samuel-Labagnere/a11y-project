@@ -19,10 +19,6 @@ export const appRoutes: Route[] = [
     component: HomePageComponent
   },
   {
-    path: 'about',
-    loadChildren: () => import('./pages/about-page/about.routes').then(m => m.aboutRoutes)
-  },
-  {
     path: 'contact',
     component: ContactPageComponent,
   },
