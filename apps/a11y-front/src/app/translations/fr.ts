@@ -18,5 +18,9 @@ export const fr = {
     button: {
       text: 'Retourner en arrière'
     }
+  },
+  newsPage: {
+    title: 'Actualités',
+    empty: 'Pas d\'actualités'
   }
 }
