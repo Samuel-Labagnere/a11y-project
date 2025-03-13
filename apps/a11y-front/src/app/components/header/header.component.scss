@@ -2,6 +2,9 @@
   background-color: #069b8f;
   color: aqua;
   margin-bottom: 6rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
 
   &__logo {
     float: left;
@@ -21,6 +24,15 @@
       text-decoration: underline !important;
       cursor: pointer;
     }
+  }
+
+  &__lang-selector select {
+    padding: .5rem;
+    background: transparent;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: aquamarine;
   }
 
   .btn--less {
