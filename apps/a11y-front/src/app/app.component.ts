@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { en } from './translations/en';
+import { en, fr } from './translations/langs';
 import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
 
 @Component({
@@ -22,8 +22,9 @@ export class AppComponent {
 
   private manageTranslations() {
     // If you need to add a language, add it to the table below, and add a new "translate.setTranslation" line as well.
-    const availableLanguages = ['en'];
+    const availableLanguages = ['en', 'fr'];
     this.translate.setTranslation('en', en);
+    this.translate.setTranslation('fr', fr);
     this.translate.setDefaultLang(availableLanguages[0]);
 
     // This is a very basic language management system. It does not manage locales (en-US, en-GB, etc.), and the files
