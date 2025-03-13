@@ -1,53 +1,88 @@
-<a href="/">&larr; Back</a>
+<a11y-header></a11y-header>
 
-<h1> Contact us </h1>
+<h1>Contact us</h1>
 
 <div class="contact-text">
-  If you are so hype about our project and want to contact us, please fill the form below. (I did not write this text,
-  Copilot did)
+  If you are so hype about our project and want to contact us, please fill the
+  form below. (I did not write this text, Copilot did)
 </div>
 
 <div class="contact">
-
   <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
     <table class="no-border">
       <tr>
         <td>
-          <div class="float-left">Name: <input [(ngModel)]="data.name" name="name" required #name="ngModel" tabindex="1"
-                                               [ngClass]="{'error': name.invalid}"/></div>
+          <input
+            [(ngModel)]="data.name"
+            name="name"
+            required
+            #name="ngModel"
+            placeholder="Name"
+            aria-label="Name"
+            tabindex="1"
+            [ngClass]="{ error: name.invalid }"
+          />
         </td>
         <td>
-          <div>Age: <input [(ngModel)]="data.age" name="age" required pattern="[1-9][0-9]*"
-                           #age="ngModel" [ngClass]="{'error': age.invalid}" tabindex="3"/></div>
+          <input
+            [(ngModel)]="data.age"
+            name="age"
+            required
+            pattern="[1-9][0-9]*"
+            #age="ngModel"
+            placeholder="Age"
+            aria-label="Age"
+            [ngClass]="{ error: age.invalid }"
+            tabindex="3"
+          />
         </td>
       </tr>
       <tr>
         <td>
-          <div>Phone number: <input [(ngModel)]="data.phoneNumber" name="phoneNumber" required pattern="\+[0-9]{11}"
-                                    #phoneNumber="ngModel" [ngClass]="{'error': phoneNumber.invalid}" tabindex="4"/></div>
+          <input
+            [(ngModel)]="data.phoneNumber"
+            name="phoneNumber"
+            required
+            pattern="\+[0-9]{11}"
+            #phoneNumber="ngModel"
+            placeholder="Phone number"
+            aria-label="Phone number"
+            [ngClass]="{ error: phoneNumber.invalid }"
+            tabindex="4"
+          />
         </td>
         <td>
-          <div class="float-left">Email <input type="email" [(ngModel)]="data.email" name="email" required
-                                               #email="ngModel" [ngClass]="{'error': email.invalid}" tabindex="2"/></div>
+          <input
+            type="email"
+            [(ngModel)]="data.email"
+            name="email"
+            required
+            #email="ngModel"
+            placeholder="Email"
+            aria-label="Email"
+            [ngClass]="{ error: email.invalid }"
+            tabindex="2"
+          />
         </td>
       </tr>
 
       <tr>
         <td colspan="2">
-          <div>Message : <br/>
-            <textarea [(ngModel)]="data.message" name="message"></textarea>
-          </div>
+          <textarea
+            [(ngModel)]="data.message"
+            name="message"
+            placeholder="Message"
+            aria-label="message"
+          ></textarea>
         </td>
       </tr>
       @if (contactForm['form'].valid) {
-        <tr>
-          <td colspan="2">
-            <button type="submit" tabindex="1">Submit</button>
-          </td>
-        </tr>
+      <tr>
+        <td colspan="2">
+          <button type="submit" tabindex="1">Submit</button>
+        </td>
+      </tr>
       }
     </table>
-
-
   </form>
 </div>
