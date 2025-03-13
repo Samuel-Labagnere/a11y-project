@@ -11,6 +11,16 @@
       width: 250px;
     }
   }
+
+  &__content_image {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 2rem;
+  }
 }
 
 .section--1 {
@@ -101,7 +111,9 @@
 
 .gallery {
   img {
-    width: 100%;
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
   }
 
   .image__caption {
