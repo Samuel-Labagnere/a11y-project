@@ -1,25 +1,32 @@
 .header {
-  background-color: #069b8f;
+  background-color: var(--secondary-color);
   color: aqua;
   margin-bottom: 6rem;
 
   &__logo {
     float: left;
     padding: .625rem;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: bolder;
+    display: flex;
+    text-align: center;
+    align-items: center;
+
   }
 
   &__menu {
     padding: .625rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
 
     &-link {
       font-size: 1.5rem;
       padding: .625rem 3.125rem;
       display: inline-block;
-      color: aquamarine;
-      text-decoration: underline !important;
+      color: var(--primary-color);
       cursor: pointer;
+      text-decoration: none;
     }
   }
 
