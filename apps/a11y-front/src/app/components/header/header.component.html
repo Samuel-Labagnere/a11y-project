@@ -6,6 +6,11 @@
         Home
       </span>
     </a>
+    <a routerLink="/about">
+      <span class="header__menu-link">
+        About
+      </span>
+    </a>
     <a routerLink="/contact">
       <span class="header__menu-link">
         Contact
@@ -33,12 +38,11 @@
         </span>
       </a>
     } @else {
-      
+      <button class="btn--less" (click)="logout()">
+        <span class="header__menu-link">
+          Logout
+        </span>
+      </button> 
     }
-    <button class="btn--less" (click)="logout()">
-      <span class="header__menu-link">
-        Logout
-      </span>
-    </button>
   </div>
 </div>
