@@ -1,48 +1,52 @@
 <div class="header">
-  <div class="header__logo"> a11y Project</div>
-  <div class="header__menu">
-    <a routerLink="/">
-      <span class="header__menu-link">
-        Home
-      </span>
-    </a>
-    <a routerLink="/about">
-      <span class="header__menu-link">
-        About
-      </span>
-    </a>
-    <a routerLink="/contact">
-      <span class="header__menu-link">
-        Contact
-      </span>
-    </a>
-    <a routerLink="/news">
-      <span class="header__menu-link">
-        News
-      </span>
-    </a>
-    <a routerLink="/lists">
-      <span class="header__menu-link">
-        Lists
-      </span>
-    </a>
-    @if (!authService.isLoggedIn()) {
+  <div class="header__content">
+    <div class="header__logo">
+      <p>a11y Project</p>
+    </div>
+    <div class="header__menu">
+      <a routerLink="/">
+        <span class="header__menu-link">
+          {{'headerComponent.home' | translate}}
+        </span>
+      </a>
+      <a routerLink="/about">
+        <span class="header__menu-link">
+          {{'headerComponent.about' | translate}}
+        </span>
+      </a>
+      <a routerLink="/contact">
+        <span class="header__menu-link">
+          {{'headerComponent.contact' | translate}}
+        </span>
+      </a>
+      <a routerLink="/news">
+        <span class="header__menu-link">
+          {{'headerComponent.news' | translate}}
+        </span>
+      </a>
+      <a routerLink="/lists">
+        <span class="header__menu-link">
+          {{'headerComponent.lists' | translate}}
+        </span>
+      </a>
+      @if (!authService.isLoggedIn()) {
       <a routerLink="/login">
         <span class="header__menu-link">
-          Login
+          {{'headerComponent.login' | translate}}
         </span>
       </a>
       <a routerLink="/register">
         <span class="header__menu-link">
-          Register
+          {{'headerComponent.register' | translate}}
         </span>
       </a>
-    } @else {
+      } @else {
       <button class="btn--less" (click)="logout()">
         <span class="header__menu-link">
-          Logout
+          {{'headerComponent.logout' | translate}}
         </span>
-      </button> 
-    }
+      </button>
+      }
+    </div>
   </div>
 </div>
