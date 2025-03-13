@@ -1,25 +1,31 @@
 .header {
-  height: 56px;
   background-color: #069b8f;
   color: aqua;
-  margin-bottom: 1in;
+  margin-bottom: 6rem;
 
   &__logo {
-    float:left;
-    padding: 10px;
+    float: left;
+    padding: .625rem;
     font-size: 3em;
     font-weight: bolder;
   }
 
   &__menu {
-    font-size: 24;
-    padding: 10px;
+    padding: .625rem;
 
-    & > * {
-      padding: 10px 50px;
-      display:inline-block;
+    &-link {
+      font-size: 1.5rem;
+      padding: .625rem 3.125rem;
+      display: inline-block;
       color: aquamarine;
-      text-decoration: none !important;
+      text-decoration: underline !important;
+      cursor: pointer;
     }
+  }
+
+  .btn--less {
+    background-color: transparent;
+    border: none;
+    padding: 0;
   }
 }

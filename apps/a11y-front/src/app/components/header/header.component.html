@@ -1,30 +1,44 @@
 <div class="header">
   <div class="header__logo"> a11y Project</div>
   <div class="header__menu">
-    <a class="header__menu-link" routerLink="/">
-      Home
+    <a routerLink="/">
+      <span class="header__menu-link">
+        Home
+      </span>
     </a>
-    <span class="header__menu-link" (click)="goToContact()">
-      Contact
-    </span>
-    <span class="header__menu-link" (click)="goToNews()">
-      News
-    </span>
-    <a class="header__menu-link" routerLink="/lists">
-      Lists
+    <a routerLink="/contact">
+      <span class="header__menu-link">
+        Contact
+      </span>
+    </a>
+    <a routerLink="/news">
+      <span class="header__menu-link">
+        News
+      </span>
+    </a>
+    <a routerLink="/lists">
+      <span class="header__menu-link">
+        Lists
+      </span>
     </a>
     @if (!authService.isLoggedIn()) {
-      <span class="header__menu-link" (click)="goToLogin()">
-      Login
-    </span>
-      <span class="header__menu-link" (click)="goToRegister()">
-      Register
-    </span>
+      <a routerLink="/login">
+        <span class="header__menu-link">
+          Login
+        </span>
+      </a>
+      <a routerLink="/register">
+        <span class="header__menu-link">
+          Register
+        </span>
+      </a>
     } @else {
-      <span class="header__menu-link" (click)="logout()">
-      Logout
-    </span>
+      
     }
-
+    <button class="btn--less" (click)="logout()">
+      <span class="header__menu-link">
+        Logout
+      </span>
+    </button>
   </div>
 </div>

@@ -28,7 +28,7 @@
 }
 
 .section--2 {
-  background-color: coral;
+  background-color: var(--primary-color);
 
   .section__content {
     &>* {
@@ -39,44 +39,45 @@
   .card {
     width: 20%;
     margin: 10px;
-    border: 1px solid #069b8f;
+    border: 1px solid var(--secondary-color);
     border-radius: 10px;
 
     &__header {
       text-align: center;
       font-size: 20px;
       font-weight: bold;
-      background-color: aliceblue;
+      background-color: var(--primary-color);
       padding: 10px;
       border-radius: 10px 10px 0 0;
     }
 
     &__body {
       padding: 10px;
+      color: var(--primary-color);
     }
   }
 
   .card--1 {
     .card__body {
-      background-color: darkkhaki;
+      background-color: var(--tertiary-color);
     }
   }
 
   .card--2 {
     .card__body {
-      background-color: lightpink;
+      background-color: var(--secondary-color);
     }
   }
 
   .card--3 {
     .card__body {
-      background-color: lightskyblue;
+      background-color: var(--tertiary-color);
     }
   }
 
   .card--4 {
     .card__body {
-      background-color: lightyellow;
+      background-color: var(--secondary-color);
     }
   }
 
