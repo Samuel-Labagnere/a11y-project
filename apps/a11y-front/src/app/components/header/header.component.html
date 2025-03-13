@@ -45,4 +45,11 @@
       </button>
     }
   </div>
+  <div class="header__lang-selector">
+    <select id="langSelector" (change)="switchLang($event)">
+      @for (lang of (availableLangs); track lang) {
+        <option [value]="lang" [selected]="lang === currentLang" >{{ lang }}</option>
+      }
+    </select>
+  </div>
 </div>
