@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from "@angular/router";
+import { RouterLink } from "@angular/router";
 import { AuthService } from "../../services/auth.service";
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'a11y-header',
@@ -12,27 +12,22 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  private router = inject(Router);
+  private translate = inject(TranslateService);
   authService = inject(AuthService);
 
-  goToContact() {
-    this.router.navigateByUrl('/contact');
+  get availableLangs() {
+    return this.translate.getLangs();
   }
 
-  goToAbout() {
-    this.router.navigateByUrl('/about');
+  get currentLang() {
+    return this.translate.currentLang;
   }
 
-  goToRegister() {
-    this.router.navigateByUrl('/register');
-  }
-
-  goToLogin() {
-    this.router.navigateByUrl('/login');
-  }
-
-  goToNews() {
-    this.router.navigateByUrl('/news');
+  switchLang(event: Event) {
+    const selector = event.target as HTMLSelectElement;
+    const lang = selector.options[selector.selectedIndex].value;
+    
+    this.translate.use(lang);
   }
 
   logout() {
