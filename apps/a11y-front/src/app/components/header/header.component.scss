@@ -62,7 +62,8 @@
     border: none;
     text-transform: uppercase;
     font-weight: bolder;
-    color: aquamarine;
+    color: var(--primary-color);
+    cursor: pointer;
   }
 
   .btn--less {
