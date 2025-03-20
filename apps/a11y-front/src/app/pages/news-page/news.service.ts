@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {map, Observable, tap} from "rxjs";
 import {environment} from "../../../environments/environment";
 import * as showdown from 'showdown';
+import { TranslateService } from "@ngx-translate/core";
 
 interface NewsApiResponse {
   data: NewsResponse[];
@@ -30,10 +31,13 @@ export interface News {
 })
 export class NewsService {
   private httpClient = inject(HttpClient);
+  private translate = inject(TranslateService);
 
   getNews(): Observable<News[]> {
+    const currentLang = this.translate.currentLang;
+    const url = `${environment.blog.url}/blogs?locale=${currentLang}&sort=publishedAt:desc`;
     return this.httpClient
-      .get<NewsApiResponse>(`${environment.blog.url}/blogs?locale=en&sort=publishedAt:desc`, {
+      .get<NewsApiResponse>(url, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${environment.blog.token}`

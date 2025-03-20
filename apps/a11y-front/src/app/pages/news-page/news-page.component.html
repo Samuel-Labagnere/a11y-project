@@ -1,7 +1,7 @@
 <a11y-header></a11y-header>
 
 <div class="news">
-  <h1>News</h1>
+  <h1>{{ 'newsPage.title' | translate }}</h1>
 
 
   <div class="news_items">
@@ -17,7 +17,7 @@
       </div>
     } @empty {
       <div class="news_item">
-        <h2>No news</h2>
+        <h2>{{ 'newsPage.empty' | translate }}</h2>
       </div>
     }
   </div>

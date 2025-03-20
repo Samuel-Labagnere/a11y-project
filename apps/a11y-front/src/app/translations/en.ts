@@ -18,5 +18,9 @@ export const en = {
     button: {
       text: 'Go back'
     }
+  },
+  newsPage: {
+    title: 'News',
+    empty: 'No news'
   }
 }

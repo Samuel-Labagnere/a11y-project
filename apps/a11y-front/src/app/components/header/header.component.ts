@@ -1,13 +1,13 @@
-import {Component, inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterLink} from "@angular/router";
-import {AuthService} from "../../services/auth.service";
+import { RouterLink } from "@angular/router";
+import { AuthService } from "../../services/auth.service";
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'a11y-header',
   standalone: true,
-    imports: [CommonModule, TranslateModule, RouterLink],
+  imports: [CommonModule, TranslateModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
