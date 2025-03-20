@@ -72,6 +72,7 @@
         [(ngModel)]="data.email"
         name="email"
         required
+        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
         #email="ngModel"
         placeholder="Email"
         [ngClass]="{ error: email.invalid && contactForm.submitted }"
