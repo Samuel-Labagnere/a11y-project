@@ -1,27 +1,20 @@
 <div class="newsletter">
-  <div class="newsletter__inner">
-    <div class="newsletter__title">STAY TUNED</div>
-    <div class="newsletter__content">
-      <div class="newsletter__text">
-        You do not want to miss our latest news! Give us your email address and
-        you can be confident to get only the best content in your mailbox every
-        single once a week.
-      </div>
-      <div class="newsletter__text">
-        + our partners will love to send you recommendations and suggest you
-        products !
-      </div>
-      <div class="newsletter__text">
-        What are you waiting for ??? Sign in now !
-      </div>
+  <p class="newsletter__title">
+    {{ 'newsletterComponent.title' | translate }}
+  </p>
+  <p class="newsletter__text">
+    {{ 'newsletterComponent.content' | translate }}
+  </p>
 
-      <div class="newsletter__form">
-        <form (ngSubmit)="signIn()" #newsletterForm="ngForm"></form>
+    @if (submit) {
+      {{ 'newsletterComponent.thanks' | translate }}
+    } @else {
+      <form class="newsletter__form" (ngSubmit)="registerToNewsletter()" #newsletterForm="ngForm">
         <input
           class="newsletter__input"
           type="text"
-          placeholder="Your email address"
-          aria-label="Your email address"
+          [placeholder]="'newsletterComponent.placeholder' | translate"
+          [ariaLabel]="'newsletterComponent.placeholder' | translate"
           [(ngModel)]="email"
           required
         />
@@ -30,13 +23,8 @@
           type="submit"
           [disabled]="newsletterForm['form'].invalid"
         >
-          Register!
+        {{ 'newsletterComponent.button' | translate }}
         </button>
-      </div>
-
-      <div class="newsletter__text newsletter__text--red">
-        And if you have any friend, sign them as well, they'll love it !
-      </div>
-    </div>
-  </div>
+      </form>
+    }
 </div>

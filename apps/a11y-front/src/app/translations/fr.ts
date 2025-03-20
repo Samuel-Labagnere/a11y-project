@@ -12,6 +12,13 @@ export const fr = {
     register: 'Inscription',
     logout: 'Déconnexion'
   },
+  newsletterComponent: {
+    title: 'Restez à jour',
+    content: 'Ne manquez pas nos actualités hebdomadaires !',
+    placeholder: 'Votre adresse email',
+    thanks: 'Merci pour votre souscription !',
+    button: 'Souscrire'
+  },
   aboutPage : {
     title: 'À propos',
     text: 'Il n\'y a pas grand chose à voir ici pour l\'instant. Pas sûr que vous vouliez savoir qui nous sommes.',
