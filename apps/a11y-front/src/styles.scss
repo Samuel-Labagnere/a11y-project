@@ -19,6 +19,8 @@ body {
   background-color: var(--primary-color);
   color: var(--text-color);
   font-family: var(--text-font);
+  margin: 0;
+  overflow: auto;
 }
 
 .float-left {
@@ -43,4 +45,16 @@ a {
   color: var(--secondary-color);
   text-decoration: none;
   font-family: var(--text-font);
+}
+
+p {
+  color: var(--text-color);
+  font-family: var(--text-font);
+  font-size: 16px;
+}
+
+h1 {
+  color: var(--title-color);
+  font-family: var(--title-font);
+  font-size: 16px;
 }
