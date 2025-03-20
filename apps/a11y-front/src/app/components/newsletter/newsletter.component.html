@@ -9,21 +9,33 @@
     @if (submit) {
       {{ 'newsletterComponent.thanks' | translate }}
     } @else {
-      <form class="newsletter__form" (ngSubmit)="registerToNewsletter()" #newsletterForm="ngForm">
-        <input
-          class="newsletter__input"
-          type="text"
-          [placeholder]="'newsletterComponent.placeholder' | translate"
-          [ariaLabel]="'newsletterComponent.placeholder' | translate"
-          [(ngModel)]="email"
-          required
-        />
+      <form
+        class="newsletter__form"
+        (ngSubmit)="onSubmit(newsletterForm)"
+        #newsletterForm="ngForm"
+        [ngClass]="{ 'newsletter__form--wider': newsletterForm.invalid && newsletterForm.submitted }"
+      >
+        <div class="newsletter__input">
+          <input
+            type="email"
+            name="email"
+            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            #email="ngModel"
+            [(ngModel)]="data.email"
+            [placeholder]="'newsletterComponent.placeholder' | translate"
+            [ariaLabel]="'newsletterComponent.placeholder' | translate"
+            [ngClass]="{ error: email.invalid && newsletterForm.submitted }"
+            required
+          />
+          <p *ngIf="email.invalid && newsletterForm.submitted" class="newsletter__text--error">
+            {{ 'newsletterComponent.error' | translate }}
+          </p>
+        </div>
         <button
           class="newsletter__button"
           type="submit"
-          [disabled]="newsletterForm['form'].invalid"
         >
-        {{ 'newsletterComponent.button' | translate }}
+          {{ 'newsletterComponent.button' | translate }}
         </button>
       </form>
     }

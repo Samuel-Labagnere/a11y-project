@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+
+export class NewsletterFormData {
+  constructor(public email: string) {}
+}
 
 @Component({
   selector: 'a11y-newsletter',
@@ -11,11 +15,13 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./newsletter.component.scss'],
 })
 export class NewsletterComponent {
-  show = false;
-  email = '';
+  data = new NewsletterFormData('');
   submit = false;
 
-  registerToNewsletter() {
-    this.submit = true;
+  onSubmit(form: NgForm) {
+    console.log('Submit', form);
+    if (form.valid) {
+      this.submit = true;
+    }
   }
 }

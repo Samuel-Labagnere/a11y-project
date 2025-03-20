@@ -17,7 +17,8 @@ export const en = {
     content: 'Do not miss our weekly news!',
     placeholder: 'Your email address',
     thanks: 'Thanks for subscribing!',
-    button: 'Subscribe'
+    button: 'Subscribe',
+    error: 'A valid email address is required'
   },
   aboutPage : {
     title: 'About',

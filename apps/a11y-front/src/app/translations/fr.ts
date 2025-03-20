@@ -17,7 +17,8 @@ export const fr = {
     content: 'Ne manquez pas nos actualités hebdomadaires !',
     placeholder: 'Votre adresse email',
     thanks: 'Merci pour votre souscription !',
-    button: 'Souscrire'
+    button: 'Souscrire',
+    error: 'Une adresse email valide est requise'
   },
   aboutPage : {
     title: 'À propos',
