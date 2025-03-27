@@ -13,7 +13,6 @@ export class CookieBannerComponent {
   showCookieBanner = true;
 
   constructor() {
-    document.cookie = 'facebookId=123;max-age=31536000;path=/'
     if (document.cookie.indexOf('cookies') >= 0) {
       this.showCookieBanner = false;
     }
@@ -25,6 +24,7 @@ export class CookieBannerComponent {
   }
   acceptBanner() {
     document.cookie = 'cookies=true;max-age=31536000;path=/';
+    document.cookie = 'facebookId=123;max-age=31536000;path=/'
     this.showCookieBanner = true;
   }
 }
