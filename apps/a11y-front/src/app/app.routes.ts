@@ -11,6 +11,7 @@ import { NotAllowedLoggedOutPageComponent } from './pages/not-allowed-logged-out
 import { LegalNoticePageComponent } from './pages/legal-notice-page/legal-notice-page.component';
 import { NewsPageComponent } from './pages/news-page/news-page.component';
 import { NewsDetailsPageComponent } from './pages/news-details-page/news-details-page.component';
+import { PrivacyPoliciesPageComponent } from './pages/privacy-policies-page/privacy-policies-page.component';
 
 export const appRoutes: Route[] = [
   {
@@ -60,6 +61,10 @@ export const appRoutes: Route[] = [
   {
     path: '403-out',
     component: NotAllowedLoggedOutPageComponent,
+  },
+  {
+    path: 'privacy-policies',
+    component: PrivacyPoliciesPageComponent
   },
   {
     path: '**',
