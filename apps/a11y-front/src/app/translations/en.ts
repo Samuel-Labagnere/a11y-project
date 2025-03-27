@@ -12,6 +12,14 @@ export const en = {
     register: 'Register',
     logout: 'Logout'
   },
+  newsletterComponent: {
+    title: 'Stay tuned',
+    content: 'Do not miss our weekly news!',
+    placeholder: 'Your email address',
+    thanks: 'Thanks for subscribing!',
+    button: 'Subscribe',
+    error: 'A valid email address is required'
+  },
   aboutPage : {
     title: 'About',
     text: 'There is nothing much to see here yet. Not sure you want to know who we are.',
