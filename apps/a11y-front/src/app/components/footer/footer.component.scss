@@ -6,11 +6,17 @@
   padding: 1rem;
 }
 
-.link {
-  color: var(--primary-color);
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  .link {
+    color: var(--primary-color);
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
