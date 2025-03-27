@@ -1,8 +1,18 @@
 @if (showCookieBanner) {
-  <div class="banner">
-    <h1> Cookies </h1>
-    <p> This site uses cookies to improve your experience. </p>
-    <p> This includes functional, targeted ads and social networks cookies. </p>
-    <button class="button" (click)="dismissBanner()"> OK </button>
+<div class="banner">
+  <h1> Cookies </h1>
+  <p>To improve your experience on our platforms and show you more relevant information, we, among other things, use
+    cookies and similar technologies belonging to a11y and third parties, as well as data sent directly from our
+    servers. For more information, see our Privacy Policy.</p>
+  <div class="button-cookies">
+    <button class="button" (click)="acceptBanner()"> Accept</button>
+    <button class="button" (click)="dismissBanner()"> Decline</button>
   </div>
+  <div class="rgpd">
+    <a routerLink="/privacy-policies">
+      Privacy Policies
+    </a>
+  </div>
+</div>
+
 }

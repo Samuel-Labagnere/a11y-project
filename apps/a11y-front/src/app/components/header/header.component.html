@@ -4,38 +4,38 @@
       <p>a11y Project</p>
     </div>
     <div class="header__menu">
-      <a routerLink="/">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <span class="header__menu-link">
           {{'headerComponent.home' | translate}}
         </span>
       </a>
-      <a routerLink="/about">
+      <a routerLink="/about" routerLinkActive="active">
         <span class="header__menu-link">
           {{'headerComponent.about' | translate}}
         </span>
       </a>
-      <a routerLink="/contact">
+      <a routerLink="/contact" routerLinkActive="active">
         <span class="header__menu-link">
           {{'headerComponent.contact' | translate}}
         </span>
       </a>
-      <a routerLink="/news">
+      <a routerLink="/news" routerLinkActive="active">
         <span class="header__menu-link">
           {{'headerComponent.news' | translate}}
         </span>
       </a>
-      <a routerLink="/lists">
+      <a routerLink="/lists" routerLinkActive="active">
         <span class="header__menu-link">
           {{'headerComponent.lists' | translate}}
         </span>
       </a>
       @if (!authService.isLoggedIn()) {
-      <a routerLink="/login">
+      <a routerLink="/login" routerLinkActive="active">
         <span class="header__menu-link">
           {{'headerComponent.login' | translate}}
         </span>
       </a>
-      <a routerLink="/register">
+      <a routerLink="/register" routerLinkActive="active">
         <span class="header__menu-link">
           {{'headerComponent.register' | translate}}
         </span>
@@ -52,7 +52,7 @@
   <div class="header__lang-selector">
     <select id="langSelector" (change)="switchLang($event)">
       @for (lang of (availableLangs); track lang) {
-        <option [value]="lang" [selected]="lang === currentLang" >{{ lang }}</option>
+      <option [value]="lang" [selected]="lang === currentLang">{{ lang }}</option>
       }
     </select>
   </div>
