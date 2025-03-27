@@ -1,27 +1,27 @@
 import { Route } from '@angular/router';
-import { HomePageComponent } from "./pages/home-page/home-page.component";
-import { mustBeLoggedOutGuard } from "./services/must-be-logged-out.guard";
-import { mustBeLoggedInGuard } from "./services/must-be-logged-in.guard";
-import { ContactPageComponent } from "./pages/contact-page/contact-page.component";
-import { RegisterPageComponent } from "./pages/register-page/register-page.component";
-import { LoginPageComponent } from "./pages/login-page/login-page.component";
-import { ListsPageComponent } from "./pages/lists-page/lists-page.component";
-import { NotAllowedLoggedInPageComponent } from "./pages/not-allowed-logged-in-page/not-allowed-logged-in-page.component";
-import {
-  NotAllowedLoggedOutPageComponent
-} from "./pages/not-allowed-logged-out-page/not-allowed-logged-out-page.component";
-import { NewsPageComponent } from "./pages/news-page/news-page.component";
-import { NewsDetailsPageComponent } from "./pages/news-details-page/news-details-page.component";
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { mustBeLoggedOutGuard } from './services/must-be-logged-out.guard';
+import { mustBeLoggedInGuard } from './services/must-be-logged-in.guard';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { ListsPageComponent } from './pages/lists-page/lists-page.component';
+import { NotAllowedLoggedInPageComponent } from './pages/not-allowed-logged-in-page/not-allowed-logged-in-page.component';
+import { NotAllowedLoggedOutPageComponent } from './pages/not-allowed-logged-out-page/not-allowed-logged-out-page.component';
+import { LegalNoticePageComponent } from './pages/legal-notice-page/legal-notice-page.component';
+import { NewsPageComponent } from './pages/news-page/news-page.component';
+import { NewsDetailsPageComponent } from './pages/news-details-page/news-details-page.component';
 import { PrivacyPoliciesPageComponent } from './pages/privacy-policies-page/privacy-policies-page.component';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    component: HomePageComponent
+    component: HomePageComponent,
   },
   {
     path: 'about',
-    loadChildren: () => import('./pages/about-page/about.routes').then(m => m.aboutRoutes)
+    loadChildren: () =>
+      import('./pages/about-page/about.routes').then((m) => m.aboutRoutes),
   },
   {
     path: 'contact',
@@ -30,25 +30,29 @@ export const appRoutes: Route[] = [
   {
     path: 'register',
     component: RegisterPageComponent,
-    canActivate: [mustBeLoggedOutGuard]
+    canActivate: [mustBeLoggedOutGuard],
   },
   {
     path: 'login',
     component: LoginPageComponent,
-    canActivate: [mustBeLoggedOutGuard]
+    canActivate: [mustBeLoggedOutGuard],
   },
   {
     path: 'lists',
     component: ListsPageComponent,
-    canActivate: [mustBeLoggedInGuard]
+    canActivate: [mustBeLoggedInGuard],
   },
   {
     path: 'news/:id',
-    component: NewsDetailsPageComponent
+    component: NewsDetailsPageComponent,
   },
   {
     path: 'news',
-    component: NewsPageComponent
+    component: NewsPageComponent,
+  },
+  {
+    path: 'legal-notice',
+    component: LegalNoticePageComponent,
   },
   {
     path: '403-in',
@@ -65,6 +69,6 @@ export const appRoutes: Route[] = [
   {
     path: '**',
     redirectTo: '',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
