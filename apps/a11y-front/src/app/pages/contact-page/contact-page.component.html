@@ -8,7 +8,7 @@
 </div>
 
 <div class="contact">
-  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     <div class="field-container">
       <label for="name">Name</label>
       <input
@@ -18,11 +18,14 @@
         #name="ngModel"
         placeholder="Name"
         tabindex="1"
-        [ngClass]="{ error: name.invalid }"
+        [ngClass]="{ error: name.invalid && contactForm.submitted }"
       />
+      <div *ngIf="name.invalid && contactForm.submitted" class="error-message">
+        The name is required.
+      </div>
     </div>
     <div class="field-container">
-      <label for="age">Âge</label>
+      <label for="age">Age</label>
       <input
         [(ngModel)]="data.age"
         type="number"
@@ -32,9 +35,12 @@
         name="age"
         #age="ngModel"
         placeholder="Age"
-        [ngClass]="{ error: age.invalid }"
+        [ngClass]="{ error: age.invalid && contactForm.submitted }"
         tabindex="3"
       />
+      <div *ngIf="age.invalid && contactForm.submitted" class="error-message">
+        Age must be greater than or equal to 1
+      </div>
     </div>
     <div class="field-container">
       <label for="phoneNumber"
@@ -49,9 +55,15 @@
         pattern="\+[0-9]{11}"
         #phoneNumber="ngModel"
         placeholder="Phone number"
-        [ngClass]="{ error: phoneNumber.invalid }"
+        [ngClass]="{ error: phoneNumber.invalid && contactForm.submitted }"
         tabindex="4"
       />
+      <div
+        *ngIf="phoneNumber.invalid && contactForm.submitted"
+        class="error-message"
+      >
+        The telephone number is in the wrong format.
+      </div>
     </div>
     <div class="field-container">
       <label for="email">Email</label>
@@ -60,11 +72,15 @@
         [(ngModel)]="data.email"
         name="email"
         required
+        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
         #email="ngModel"
         placeholder="Email"
-        [ngClass]="{ error: email.invalid }"
+        [ngClass]="{ error: email.invalid && contactForm.submitted }"
         tabindex="2"
       />
+      <div *ngIf="email.invalid && contactForm.submitted" class="error-message">
+        The email address is in the wrong format.
+      </div>
     </div>
     <div class="field-container message">
       <label for="message">Message</label>
@@ -77,3 +93,5 @@
     <button type="submit" tabindex="1">Submit</button>
   </form>
 </div>
+
+<a11y-footer></a11y-footer>
