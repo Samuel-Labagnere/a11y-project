@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from "@angular/router";
+import { RouterLink, RouterLinkActive } from "@angular/router";
 import { AuthService } from "../../services/auth.service";
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'a11y-header',
   standalone: true,
-  imports: [CommonModule, TranslateModule, RouterLink],
+  imports: [CommonModule, TranslateModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
@@ -26,7 +26,7 @@ export class HeaderComponent {
   switchLang(event: Event) {
     const selector = event.target as HTMLSelectElement;
     const lang = selector.options[selector.selectedIndex].value;
-    
+
     this.translate.use(lang);
   }
 
