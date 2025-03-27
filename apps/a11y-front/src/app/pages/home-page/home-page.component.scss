@@ -133,16 +133,13 @@
   .placeholder {
     width: 4%
   }
-
-  .section__title {
-    margin-bottom: 3rem;
-  }
 }
 
 .section--3 {
   .section__title {
     margin-top: 3rem;
     margin-bottom: 3rem;
+    padding-bottom: 5rem;
   }
 }
 
@@ -179,5 +176,8 @@
 
   .image__caption {
     text-align: center;
+    padding-bottom: 5rem;
+
   }
+
 }
