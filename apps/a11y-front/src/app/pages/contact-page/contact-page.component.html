@@ -8,80 +8,90 @@
 </div>
 
 <div class="contact">
-  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-    <table class="no-border">
-      <tr>
-        <td>
-          <input
-            [(ngModel)]="data.name"
-            name="name"
-            required
-            #name="ngModel"
-            placeholder="Name"
-            aria-label="Name"
-            tabindex="1"
-            [ngClass]="{ error: name.invalid }"
-          />
-        </td>
-        <td>
-          <input
-            [(ngModel)]="data.age"
-            name="age"
-            required
-            pattern="[1-9][0-9]*"
-            #age="ngModel"
-            placeholder="Age"
-            aria-label="Age"
-            [ngClass]="{ error: age.invalid }"
-            tabindex="3"
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <input
-            [(ngModel)]="data.phoneNumber"
-            name="phoneNumber"
-            required
-            pattern="\+[0-9]{11}"
-            #phoneNumber="ngModel"
-            placeholder="Phone number"
-            aria-label="Phone number"
-            [ngClass]="{ error: phoneNumber.invalid }"
-            tabindex="4"
-          />
-        </td>
-        <td>
-          <input
-            type="email"
-            [(ngModel)]="data.email"
-            name="email"
-            required
-            #email="ngModel"
-            placeholder="Email"
-            aria-label="Email"
-            [ngClass]="{ error: email.invalid }"
-            tabindex="2"
-          />
-        </td>
-      </tr>
-
-      <tr>
-        <td colspan="2">
-          <textarea
-            [(ngModel)]="data.message"
-            name="message"
-            placeholder="Message"
-            aria-label="message"
-            rows="3"
-          ></textarea>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <button type="submit" tabindex="1">Submit</button>
-        </td>
-      </tr>
-    </table>
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <div class="field-container">
+      <label for="name">Name</label>
+      <input
+        [(ngModel)]="data.name"
+        name="name"
+        required
+        #name="ngModel"
+        placeholder="Name"
+        tabindex="1"
+        [ngClass]="{ error: name.invalid && contactForm.submitted }"
+      />
+      <div *ngIf="name.invalid && contactForm.submitted" class="error-message">
+        The name is required.
+      </div>
+    </div>
+    <div class="field-container">
+      <label for="age">Age</label>
+      <input
+        [(ngModel)]="data.age"
+        type="number"
+        min="1"
+        max="120"
+        required
+        name="age"
+        #age="ngModel"
+        placeholder="Age"
+        [ngClass]="{ error: age.invalid && contactForm.submitted }"
+        tabindex="3"
+      />
+      <div *ngIf="age.invalid && contactForm.submitted" class="error-message">
+        Age must be greater than or equal to 1
+      </div>
+    </div>
+    <div class="field-container">
+      <label for="phoneNumber"
+        >Phone number
+        <span>(Format +33123456789)</span>
+      </label>
+      <input
+        [(ngModel)]="data.phoneNumber"
+        type="tel"
+        name="phoneNumber"
+        required
+        pattern="\+[0-9]{11}"
+        #phoneNumber="ngModel"
+        placeholder="Phone number"
+        [ngClass]="{ error: phoneNumber.invalid && contactForm.submitted }"
+        tabindex="4"
+      />
+      <div
+        *ngIf="phoneNumber.invalid && contactForm.submitted"
+        class="error-message"
+      >
+        The telephone number is in the wrong format.
+      </div>
+    </div>
+    <div class="field-container">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        [(ngModel)]="data.email"
+        name="email"
+        required
+        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+        #email="ngModel"
+        placeholder="Email"
+        [ngClass]="{ error: email.invalid && contactForm.submitted }"
+        tabindex="2"
+      />
+      <div *ngIf="email.invalid && contactForm.submitted" class="error-message">
+        The email address is in the wrong format.
+      </div>
+    </div>
+    <div class="field-container message">
+      <label for="message">Message</label>
+      <textarea
+        [(ngModel)]="data.message"
+        name="message"
+        placeholder="Message"
+      ></textarea>
+    </div>
+    <button type="submit" tabindex="1">Submit</button>
   </form>
 </div>
+
+<a11y-footer></a11y-footer>

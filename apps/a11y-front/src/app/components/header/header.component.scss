@@ -2,6 +2,9 @@
   background-color: var(--secondary-color);
   color: var(--secondary-color);
   margin-bottom: 6rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
   border-radius: 1.4rem;
   position: sticky;
   top: 5px;
@@ -51,6 +54,16 @@
       text-underline-offset: 0.5rem;
       font-size: 1.1rem;
     }
+  }
+
+  &__lang-selector select {
+    padding: .5rem;
+    background: transparent;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: var(--primary-color);
+    cursor: pointer;
   }
 
   .btn--less {
